@@ -22,3 +22,7 @@ Route::get('/home', function () {
 // Route::get('/nope','UserController@noFunction');
 Route::get('/user',[UserController::class, 'index']);
 Route::get('/hope','NewCon@index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
