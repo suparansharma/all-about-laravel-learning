@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+// use GuzzleHttp\Psr7\Request; 
+use Illuminate\Http\Request;
+// use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -28,6 +31,13 @@ Route::get('/hope','NewCon@index');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/upload',function(){
-dd('sdf');
+Route::post('/upload',function(Request $request){
+// dd(request()->all());
+// dd($request->file('image'));
+
+// save into storages
+$request->image->store('image','public');
+return 'uploaded';
 });
+
+Route::post('/upload',[UserController::class, 'uploadAvatar']);

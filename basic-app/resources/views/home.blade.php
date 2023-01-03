@@ -19,10 +19,10 @@
 
                 <div class="card-body">
                    
-                   <form action="/upload" method="post">
+                   <form action="/upload" method="post" enctype="multipart/form-data">
                    @csrf
-                    <input type="file" name="image">
-                    <input type="submit" name="upload">
+                    <input type="file" name="image"/>
+                    <input type="submit" value="upload"/>
 
                    </form>
                 </div>

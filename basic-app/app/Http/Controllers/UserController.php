@@ -10,6 +10,11 @@ class UserController extends Controller
 {
    
 
+        public function uploadAvatar(Request $request){
+                $request->image->store('images','public');
+                return "uploaded";
+        }
+
     public function index()
     {
 
