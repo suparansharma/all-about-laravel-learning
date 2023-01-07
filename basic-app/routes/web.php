@@ -30,6 +30,7 @@ Route::get('/user',[UserController::class, 'index']);
 Route::get('/hope','NewCon@index');
 Route::get('/todos',[TodoController::class,'index']);
 Route::get('/todos/create',[TodoController::class,'create']);
+Route::post('/todos/create',[TodoController::class,'store']);
 
 Auth::routes(); 
 

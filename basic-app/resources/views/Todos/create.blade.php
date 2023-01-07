@@ -9,11 +9,11 @@
 </head>
 <body>
 <div class="text-center pt-10">
-
-<form>
+<x-alert/>
+<form method="post" action="/todos/create" class="py-5">
     @csrf
-     <input type="text" name="title" class="py-3 px-2 border"/>
-     <input type="submit" value="create">
+     <input type="text" name="title" class="py-2 px-2 border rounded"/>
+     <input type="submit" value="create" class="p-2 px-2 border rounded"/>
 </form>
 
 </div>
