@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 // use GuzzleHttp\Psr7\Request; 
@@ -27,8 +28,10 @@ Route::get('/home', function () {
 // Route::get('/nope','UserController@noFunction');
 Route::get('/user',[UserController::class, 'index']);
 Route::get('/hope','NewCon@index');
+Route::get('/todos',[TodoController::class,'index']);
+Route::get('/todos/create',[TodoController::class,'create']);
 
-Auth::routes();
+Auth::routes(); 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/upload',function(Request $request){
